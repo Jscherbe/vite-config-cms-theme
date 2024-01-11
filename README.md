@@ -74,7 +74,9 @@ The 'createConfig' function accepts the following options
 - **withLegacy** | {Boolean} | Whether to output the legacy vite bundle
 - **withVue** | {Boolean} | Include vue plugin
 - **withImageOptimizer** | {Boolean} | Include image optimizer plugin
-- **reloadWatch** | {Array} | Watch options to be passed to reloadWatch plugin, default to Drupal paths (any php|inc|theme|twig files in theme directory or custom modules)
+- **withWatchReload** | {Boolean} | Include watch plugin to reload based on other files (php etc)
+- **watchReloadOptions** | {Array} | Watch options to be passed to reloadWatch plugin, default to Drupal paths (any php|inc|theme|twig files in theme directory or custom modules). Any valid options for 'vite-plugin-full-reload'
+- **imageOptimizerOptions** | {Object} | Any valid options for 'vite-plugin-image-optimizer'
 - **preprocessorOptions** | {Array} | Options to be passed to vite css.preprocessorOptions, defaults to adding includePaths "src/scss/" to sass preprocessor
 - **alias** | {Array} | Options to be passed to vite resolve.alias, defaults setup "@/ = src/"
 - **host** | {String} | Host for Vite dev server

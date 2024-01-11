@@ -1,11 +1,11 @@
 {
   "name": "@ulu/vite-config-cms-theme",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Creates vite config for drupal theming (non-app traditional sites). Supports HMR, legacy bundling, image optimization and Vue.",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "lint": "eslint ./index.js"
+    "lint": "eslint ./index.js ./defaults.js"
   },
   "repository": {
     "type": "git",
