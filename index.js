@@ -11,7 +11,7 @@ import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import vue from "@vitejs/plugin-vue";
 import autoprefixer from "autoprefixer";
 import externalsDev from "vite-plugin-externalize-dependencies";
-import defaults from "./defaults";
+import defaults from "./defaults.js";
 
 const libname = "@ulu/vite-config-cms-theme";
 const requiredOptions = ["origin", "themePath"];
