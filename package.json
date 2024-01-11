@@ -1,0 +1,44 @@
+{
+  "name": "@ulu/vite-drupal-theme",
+  "version": "0.0.1",
+  "description": "Creates vite config for drupal theming (non-app traditional sites). Supports HMR, legacy bundling, image optimization and Vue.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Jscherbe/vite-drupal-theme.git"
+  },
+  "keywords": [
+    "Vite",
+    "CMS",
+    "Drupal",
+    "theme",
+    "HMR",
+    "Hot module replacement",
+    "Javascript",
+    "config",
+    "dev server"
+  ],
+  "author": "Joe Scherben",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jscherbe/vite-drupal-theme/issues"
+  },
+  "homepage": "https://github.com/Jscherbe/vite-drupal-theme#readme",
+  "devDependencies": {
+    "eslint": "^8.56.0"
+  },
+  "dependencies": {
+    "@ulu/utils": "^0.0.6",
+    "@vitejs/plugin-legacy": "^5.2.0",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "autoprefixer": "^10.4.16",
+    "rollup-plugin-external-globals": "^0.9.1",
+    "vite-plugin-externalize-dependencies": "^0.11.0",
+    "vite-plugin-full-reload": "^1.1.0",
+    "vite-plugin-image-optimizer": "^1.1.7"
+  }
+}
