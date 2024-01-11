@@ -1,5 +1,5 @@
 {
-  "name": "@ulu/vite-drupal-theme",
+  "name": "@ulu/vite-config-cms-theme",
   "version": "0.0.1",
   "description": "Creates vite config for drupal theming (non-app traditional sites). Supports HMR, legacy bundling, image optimization and Vue.",
   "main": "index.js",
@@ -9,12 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Jscherbe/vite-drupal-theme.git"
+    "url": "git+ssh://git@github.com/Jscherbe/vite-config-cms-theme.git"
   },
   "keywords": [
     "Vite",
     "CMS",
     "Drupal",
+    "Wordpress",
     "theme",
     "HMR",
     "Hot module replacement",
@@ -25,9 +26,9 @@
   "author": "Joe Scherben",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Jscherbe/vite-drupal-theme/issues"
+    "url": "https://github.com/Jscherbe/vite-config-cms-theme/issues"
   },
-  "homepage": "https://github.com/Jscherbe/vite-drupal-theme#readme",
+  "homepage": "https://github.com/Jscherbe/vite-config-cms-theme#readme",
   "devDependencies": {
     "eslint": "^8.56.0"
   },

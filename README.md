@@ -1,15 +1,15 @@
-# @ulu/vite-drupal-config
+# @ulu/vite-config-cms-theme
 
-This module creates Vite config for developing a Drupal theme. It uses Vite for building production assets and uses the Vite dev server as an asset server while developing the site locally. 
+This module creates Vite config for developing a CMS theme. It uses Vite for building production assets and uses the Vite dev server as an asset server while developing the site locally. 
 
-Currently this is being used for Drupal projects but will probably work for other traditional site/CMS (ie. Wordpress). Note you need to configure/setup your CMS to work correctly (HMR, dev server) by switching the paths to assets when developing (see CMS Setup below).
+Currently this is being used for Drupal projects but will probably work for other traditional site/CMS (ie. Wordpress, Hugo SSG). Note you need to configure/setup your CMS to work correctly (HMR, dev server) by switching the paths to assets when developing (see CMS Setup below).
 
 ## Usage 
 
 **In your theme's root folder 'vite.config.js'**. See options below for more information.
 
 ```js
-import { createConfig } from "@ulu/vite-drupal-config";
+import { createConfig } from "@ulu/vite-drupal-theme";
 
 export default createConfig({
   origin: "http://inf-2301--website",

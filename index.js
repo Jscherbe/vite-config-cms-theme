@@ -10,7 +10,7 @@ import vue from "@vitejs/plugin-vue";
 import autoprefixer from "autoprefixer";
 import externalsDev from "vite-plugin-externalize-dependencies";
 
-const libname = "@ulu/vite-drupal-theme";
+const libname = "@ulu/vite-config-cms-theme";
 const cwd = process.cwd();
 const reqUserProps = ["origin", "themePath"];
 const hasReqUserProps = hasRequiredProps(reqUserProps);
