@@ -9,7 +9,7 @@ Currently this is being used for Drupal projects but will probably work for othe
 **In your theme's root folder 'vite.config.js'**. See options below for more information.
 
 ```js
-import { createConfig } from "@ulu/vite-drupal-theme";
+import { createConfig } from "@ulu/vite-config-cms-theme";
 
 export default createConfig({
   origin: "http://inf-2301--website",
@@ -18,7 +18,7 @@ export default createConfig({
 
 ```
 
-## CMS Setup
+## CMS Setup (Drupal)
 
 By default Vite is designed for developing applications, this module changes defaults and adds plugins to make Vite features work on a traditional website (non-app).
 
@@ -26,7 +26,7 @@ In a Drupal site, what this is tested with. You need to change your theme's libr
 
 1. Adding two libraries to our theme. One that points to the production assets (CSS/JS) and one that points to the local Vite dev server. This way when you are developing locally assets will be requested from the Vite dev server.
 2. Adding special frontend_dev flag to our settings.php to be set locally by the developer to switch to Vite for local development
-3. Last, we have a have a custom preprocess theme hook that checks for that 'frontend_dev' flag and conditionally loads the dev library vs the normal theme assets
+3. Last, we have a have a custom preprocess theme hook/function that checks for that 'frontend_dev' flag and conditionally loads the dev library vs the normal theme assets
 
 **Example THEME.libraries.yml**
 
