@@ -6,7 +6,7 @@ Currently this is being used for Drupal projects but will probably work for othe
 
 ## Usage 
 
-**In your theme's root folder 'vite.config.js'**. See options below for more information.
+**In your theme's root folder 'vite.config.js'**. See options below for more information. See repository "./scaffold" for example folder/file structure.
 
 ```js
 import { createConfig } from "@ulu/vite-config-cms-theme";

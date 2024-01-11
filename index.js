@@ -1,4 +1,6 @@
 /* eslint-env node */
+import fs from "fs";
+import path from "path";
 import { hasRequiredProps } from "@ulu/utils/object.js";
 import { resolve } from "path";
 import { defineConfig } from "vite";
@@ -12,14 +14,15 @@ import externalsDev from "vite-plugin-externalize-dependencies";
 
 const libname = "@ulu/vite-config-cms-theme";
 const cwd = process.cwd();
-const reqUserProps = ["origin", "themePath"];
-const hasReqUserProps = hasRequiredProps(reqUserProps);
+const requiredOptions = ["origin", "themePath"];
+const hasRequiredOptions = hasRequiredProps(requiredOptions);
 
 /**
  * Mixin Default options
  */
 export const defaults = {
   debug: false,
+  localOptionsFile: "vite.local.json",
   cwd,
   port: 5173,
   stylesOnly: false,
@@ -54,11 +57,15 @@ export const defaults = {
  */
 export function createConfig(userOptions) {
 
-  if (!hasReqUserProps(userOptions)) {
+  const options = Object.assign({}, defaults, userOptions);
+  const localOptions = loadLocalOptions(options);
+
+  Object.assign(options, localOptions);
+
+  if (!hasRequiredOptions(options)) {
     throw Error(`${ libname }: Missing required options: ${ reqUserProps.join() }`);
   }
 
-  const options = Object.assign({}, defaults, userOptions);
   const { 
     input,
     port,
@@ -75,7 +82,7 @@ export function createConfig(userOptions) {
     withLegacy,
     withVue,
     withImageOptimizer,
-    debug,
+    debug
   } = options;
 
   const debugLog = (title, msg) => {
@@ -166,3 +173,23 @@ export function createConfig(userOptions) {
     };
   });
 } 
+
+
+function loadLocalOptions(options) {
+  const { cwd, localOptionsFile } = options;
+  if (!localOptionsFile) return null;
+  const filepath = path.resolve(cwd, localOptionsFile);
+  if (fs.existsSync(filepath)) {
+    try {
+      let result = JSON.parse(fs.readFileSync(filepath)?.toString());
+      return result;
+    } catch (error) {
+      console.error(`${ libname }: Loading localOptionsFile as JSON failed`);
+      console.error(error);
+      return null;
+    }
+  } else {
+    console.warn(`${ libname } (localOptionsFile): Local vite options file is missing (ie. origin, themePath).`);
+    return null;
+  }
+}
