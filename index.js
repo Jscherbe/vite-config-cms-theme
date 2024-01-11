@@ -1,5 +1,5 @@
 /* eslint-env node */
-import { hasRequiredProps } from "@ulu/utils/object";
+import { hasRequiredProps } from "@ulu/utils/object.js";
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import legacyPlugin from "@vitejs/plugin-legacy";
@@ -75,6 +75,7 @@ export function createConfig(userOptions) {
     withLegacy,
     withVue,
     withImageOptimizer,
+    debug,
   } = options;
 
   const debugLog = (title, msg) => {
