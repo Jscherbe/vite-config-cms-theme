@@ -189,7 +189,7 @@ function loadLocalOptions(options) {
       return null;
     }
   } else {
-    console.warn(`${ libname } (localOptionsFile): Local vite options file is missing (ie. origin, themePath).`);
+    console.warn(`${ libname } (localOptionsFile): Local vite options file is missing (ie. origin, themePath). Looked for file at: ${ filepath }.`);
     return null;
   }
 }
