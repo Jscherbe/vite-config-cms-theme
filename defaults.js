@@ -22,7 +22,7 @@ export default {
   withImageOptimizer: true,
   watchReloadOptions: [
     "**/*.(php|inc|theme|twig)",
-    "../../modules/custom/**/*.(php|inc|theme|twig)",
+    "../../../modules/custom/**/*.(php|inc|theme|twig)",
   ],
   imageOptimizerOptions: { 
     includePublic: true 
