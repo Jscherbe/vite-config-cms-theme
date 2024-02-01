@@ -2,7 +2,7 @@
 
 This module creates Vite config for developing a CMS theme. It uses Vite for building production assets and uses the Vite dev server as an asset server while developing the site locally. 
 
-Currently this is being used for Drupal projects but will probably work for other traditional site/CMS (ie. Wordpress, Hugo SSG). Note you need to configure/setup your CMS to work correctly (HMR, dev server) by switching the paths to assets when developing (see CMS Setup below).
+Currently this is being used for Drupal projects but would probably work for other traditional site/CMS (ie. Wordpress, Hugo SSG). Note you need to configure/setup your CMS to work correctly (HMR, dev server) by switching the paths to assets when developing (see CMS Setup below).
 
 ## Usage 
 
@@ -22,11 +22,13 @@ export default createConfig({
 
 By default Vite is designed for developing applications, this module changes defaults and adds plugins to make Vite features work on a traditional website (non-app).
 
-In a Drupal site, what this is tested with. You need to change your theme's libraries when developing locally. We did this by:
+In a Drupal site, what this is tested with. You need to change your theme's libraries when developing locally. 
+
+**We did this by:**
 
 1. Adding two libraries to our theme. One that points to the production assets (CSS/JS) and one that points to the local Vite dev server. This way when you are developing locally assets will be requested from the Vite dev server.
 2. Adding special frontend_dev flag to our settings.php to be set locally by the developer to switch to Vite for local development
-3. Last, we have a have a custom preprocess theme hook/function that checks for that 'frontend_dev' flag and conditionally loads the dev library vs the normal theme assets
+3. Last, we have a have a custom preprocess theme hook/function that checks for that 'frontend_dev' flag and conditionally loads the dev libraries vs the normal theme libraries ('css-js' vs 'css-js-dev' in the example below).
 
 **Example THEME.libraries.yml**
 
