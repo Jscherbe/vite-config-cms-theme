@@ -12,8 +12,8 @@ Currently this is being used for Drupal projects but will probably work for othe
 import { createConfig } from "@ulu/vite-config-cms-theme";
 
 export default createConfig({
-  origin: "http://inf-2301--website",
-  themePath: "/themes/custom/is_2023"
+  origin: "http://site-local-url",
+  themePath: "/themes/custom/theme-name"
 });
 
 ```
@@ -32,6 +32,7 @@ In a Drupal site, what this is tested with. You need to change your theme's libr
 
 ```yaml
 
+# Normal Production Libraries
 css-js:
   version: 1.0
   css:
@@ -43,12 +44,12 @@ css-js:
   dependencies:
     - core/jquery
 
-#Frontend Development
+# Libraries pointing to vite (asset server) during development
 css-js-dev:
   version: 1.0
   js:
-    http://localhost:5173/@vite/client: { attributes: { type: module }}
-    http://localhost:5173/src/main.js: { attributes: { type: module }}
+    http://localhost:5173/themes/custom/theme-name/@vite/client: { attributes: { type: module }}
+    http://localhost:5173/themes/custom/theme-name/src/main.js: { attributes: { type: module }}
   dependencies:
     - core/jquery
 
