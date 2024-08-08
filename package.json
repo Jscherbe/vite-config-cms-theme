@@ -1,7 +1,7 @@
 {
   "name": "@ulu/vite-config-cms-theme",
-  "version": "0.0.10",
-  "description": "Creates vite config for drupal theming (non-app traditional sites). Supports HMR, legacy bundling, image optimization and Vue.",
+  "version": "0.0.13",
+  "description": "Creates vite config for Drupal theme (non-app traditional sites). Supports HMR, legacy bundling, image optimization and Vue. Can be used for other static sites as well (ie. Hugo, Eleventy).",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -21,7 +21,10 @@
     "Hot module replacement",
     "Javascript",
     "config",
-    "dev server"
+    "dev server",
+    "static site generator",
+    "SSG",
+    "Eleventy"
   ],
   "author": "Joe Scherben",
   "license": "MIT",
@@ -33,13 +36,13 @@
     "eslint": "^8.56.0"
   },
   "dependencies": {
-    "@ulu/utils": "^0.0.8",
-    "@vitejs/plugin-legacy": "^5.2.0",
-    "@vitejs/plugin-vue": "^5.0.3",
-    "autoprefixer": "^10.4.16",
-    "rollup-plugin-external-globals": "^0.9.1",
-    "vite-plugin-externalize-dependencies": "^0.11.0",
-    "vite-plugin-full-reload": "^1.1.0",
-    "vite-plugin-image-optimizer": "^1.1.7"
+    "@ulu/utils": "^0.0.12",
+    "@vitejs/plugin-legacy": "^5.4.1",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "autoprefixer": "^10.4.20",
+    "rollup-plugin-external-globals": "^0.11.0",
+    "vite-plugin-externalize-dependencies": "^1.0.1",
+    "vite-plugin-full-reload": "^1.2.0",
+    "vite-plugin-image-optimizer": "^1.1.8"
   }
 }

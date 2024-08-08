@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.0.13
+
+- Add new options for: noChunks, minify, minifyCss, plugins, entryFileNames, chunkFileNames, assetFileNames
+- Updated docs with new options
+- noChunks is the default now since that was needed for AdvAgg use in Drupal where all JS in concatenated into a single file
+
 ## 0.0.10
 
 - Update README's, fix issue with dev library asset path (ie 'http://localhost:5173/src/main.js' to 'http://localhost:5173/themes/custom/theme-name/src/main.js')

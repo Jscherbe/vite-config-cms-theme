@@ -56,7 +56,13 @@ export function createConfig(userOptions) {
     withWatchReload,
     watchReloadOptions,
     imageOptimizerOptions,
-    debug
+    debug,
+    minify,
+    cssMinify,
+    noChunks,
+    entryFileNames,
+    chunkFileNames,
+    assetFileNames,
   } = options;
 
   const debugLog = (title, msg) => {
@@ -100,6 +106,10 @@ export function createConfig(userOptions) {
       plugins.push(ViteImageOptimizer(imageOptimizerOptions));
     }
 
+    // Allow user to add plugins from config option 
+    // Instead of having to modify the config after it's created
+    plugins.push(...options.plugins);
+
     return {
       publicDir: stylesOnly ? false : publicDir,
       // Base directory will change based on what command is running
@@ -109,18 +119,19 @@ export function createConfig(userOptions) {
       base: isServe ? themePath : `${ themePath }/${ outDir }/`,
       plugins,
       build: {
-        minify: false,
-        cssMinify: false,
+        minify,
+        cssMinify,
+        outDir,
         cssCodeSplit: stylesOnly ? true : false,
-        outDir: outDir,
         rollupOptions: {
           input,
           ...(globalJquery ? { external: ["jquery"] } : {}),
           output: {
-            entryFileNames: "[name].js",
-            chunkFileNames: "chunks/[name].[hash].js",
-            assetFileNames: "[name].[ext]",
+            entryFileNames,
+            chunkFileNames,
+            assetFileNames,
             ...(globalJquery ? { globals: { jquery: "jQuery" }} : {}),
+            ...(noChunks ? { inlineDynamicImports: true } : {})
           },
         },
       },

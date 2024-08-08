@@ -2,7 +2,9 @@
 
 This module creates Vite config for developing a CMS theme. It uses Vite for building production assets and uses the Vite dev server as an asset server while developing the site locally. 
 
-Currently this is being used for Drupal projects but would probably work for other traditional site/CMS (ie. Wordpress, Hugo SSG). Note you need to configure/setup your CMS to work correctly (HMR, dev server) by switching the paths to assets when developing (see CMS Setup below).
+Currently this is being used for Drupal projects and with static site generators (Hugo, Eleventy). Will also work in other traditional site/CMS (ie. Wordpress, etc) that need static assets. 
+
+Note for local development you need to configure/setup your CMS to work correctly (HMR, dev server) by switching the paths to assets when developing (see CMS Setup below). CSS/JS is served/managed by vite during local development. Vite works as an asset server which makes the development experience similar to working on an Vue/React App.
 
 ## Usage 
 
@@ -74,6 +76,13 @@ The 'createConfig' function accepts the following options
 - **publicDir** | {String} | Location of Vite public dir (used for assets), default "src/public"
 - **stylesOnly** | {Boolean} | When set to true will generate only css file for input (building editor styles, builder styles, etc)
 - **globalJquery** | {String} | Add global/external jquery, so that you can import it like normal inside your ES modules, for CMS's where jQuery is accessible in the window (global)
+- **noChunks** | {Boolean} | Default true, don't allow async chunks. In drupal theme we are using AdvAgg for JS so this behavior wasn't wanted. Enable chunks by setting this to true.
+- **minify** | {Boolean} | (default true) Minify JS 
+- **minifyCss** | {Boolean} | (default true) Minify CSS
+- **plugins** | {Array} | Plugins to add to config
+- **entryFileNames** | {String} | Options to configure build option "entryFileNames" (defaults to "[name].js")
+- **chunkFileNames** | {String} | Options to configure build option "chunkFileNames" (defaults to "chunks/[name].[hash].js")
+- **assetFileNames** | {String} | Options to configure build option "assetFileNames" (defaults to "[name].[ext]")
 - **withLegacy** | {Boolean} | Whether to output the legacy vite bundle
 - **withVue** | {Boolean} | Include vue plugin
 - **withImageOptimizer** | {Boolean} | Include image optimizer plugin

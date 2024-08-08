@@ -9,6 +9,9 @@ export default {
   localOptionsFile: "vite.local.json",
   port: 5173,
   stylesOnly: false,
+  minify: true,
+  cssMinify: true,
+  noChunks: true,
   host: "localhost",
   input: "src/main.js",
   origin: "http://site-url",
@@ -35,4 +38,8 @@ export default {
       includePaths: [resolve(cwd, "./src/scss")],
     }
   },
+  plugins: [],
+  entryFileNames: "[name].js",
+  chunkFileNames: "chunks/[name].[hash].js",
+  assetFileNames: "[name].[ext]",
 };
