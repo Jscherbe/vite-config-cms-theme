@@ -1,6 +1,6 @@
 {
   "name": "@ulu/vite-config-cms-theme",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Creates vite config for Drupal theme (non-app traditional sites). Supports HMR, legacy bundling, image optimization and Vue. Can be used for other static sites as well (ie. Hugo, Eleventy).",
   "main": "index.js",
   "type": "module",

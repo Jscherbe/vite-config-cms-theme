@@ -83,6 +83,7 @@ The 'createConfig' function accepts the following options
 - **entryFileNames** | {String} | Options to configure build option "entryFileNames" (defaults to "[name].js")
 - **chunkFileNames** | {String} | Options to configure build option "chunkFileNames" (defaults to "chunks/[name].[hash].js")
 - **assetFileNames** | {String} | Options to configure build option "assetFileNames" (defaults to "[name].[ext]")
+- **assetsInlineLimit** | {Number} | Set build.assetsInlineLimit (defaults to 0, which is disabled)
 - **withLegacy** | {Boolean} | Whether to output the legacy vite bundle
 - **withVue** | {Boolean} | Include vue plugin
 - **withImageOptimizer** | {Boolean} | Include image optimizer plugin
@@ -93,5 +94,6 @@ The 'createConfig' function accepts the following options
 - **alias** | {Object} | Options to be passed to vite resolve.alias, defaults setup "@/ = src/"
 - **host** | {String} | Host for Vite dev server
 - **port** | {Number} | The port for Vite dev server, default (5173)
+
 - **debug** | {Boolean} | Output debug logs (console)
 

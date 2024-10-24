@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.15
+
+- Add option "assetsInlineLimit" to be passed as is to build.assetsInlineLimit. Our default is 0 (we don't want inlined assets [ie. svg, etc])
+  
 ## 0.0.14
 
 - Fix readme (alias option was array should be object)

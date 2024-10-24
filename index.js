@@ -63,6 +63,7 @@ export function createConfig(userOptions) {
     entryFileNames,
     chunkFileNames,
     assetFileNames,
+    assetsInlineLimit
   } = options;
 
   const debugLog = (title, msg) => {
@@ -122,6 +123,7 @@ export function createConfig(userOptions) {
         minify,
         cssMinify,
         outDir,
+        assetsInlineLimit,
         cssCodeSplit: stylesOnly ? true : false,
         rollupOptions: {
           input,

@@ -42,4 +42,5 @@ export default {
   entryFileNames: "[name].js",
   chunkFileNames: "chunks/[name].[hash].js",
   assetFileNames: "[name].[ext]",
+  assetsInlineLimit: 0
 };
