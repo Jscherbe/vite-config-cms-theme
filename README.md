@@ -90,7 +90,7 @@ The 'createConfig' function accepts the following options
 - **watchReloadOptions** | {Array} | Watch options to be passed to reloadWatch plugin, default to Drupal paths (any php|inc|theme|twig files in theme directory or custom modules). Any valid options for 'vite-plugin-full-reload'
 - **imageOptimizerOptions** | {Object} | Any valid options for 'vite-plugin-image-optimizer'
 - **preprocessorOptions** | {Array} | Options to be passed to vite css.preprocessorOptions, defaults to adding includePaths "src/scss/" to sass preprocessor
-- **alias** | {Array} | Options to be passed to vite resolve.alias, defaults setup "@/ = src/"
+- **alias** | {Object} | Options to be passed to vite resolve.alias, defaults setup "@/ = src/"
 - **host** | {String} | Host for Vite dev server
 - **port** | {Number} | The port for Vite dev server, default (5173)
 - **debug** | {Boolean} | Output debug logs (console)
