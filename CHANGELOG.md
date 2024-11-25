@@ -1,5 +1,20 @@
 # Change Log
 
+## 0.0.16
+
+- Change defaults for preprocessorOptions > scss to dart sass (sass-embedded)
+  - sass option 'includePaths' is changed to 'loadPaths'
+  - Silencing warnings on dependency sass warnings (ie. font awesome library warnings for example)
+  - Switch 'api' to modern-compiler (which will use sass-embedded)
+  - To go back to the old dart sass js version pass the following preprocessor options
+    ```js
+      preprocessorOptions: {
+        scss: {
+          includePaths: [path.resolve("./path/to/scss")],
+        }
+      },
+    ```
+
 ## 0.0.15
 
 - Add option "assetsInlineLimit" to be passed as is to build.assetsInlineLimit. Our default is 0 (we don't want inlined assets [ie. svg, etc])

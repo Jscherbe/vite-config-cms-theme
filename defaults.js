@@ -35,7 +35,9 @@ export default {
   },
   preprocessorOptions: {
     scss: {
-      includePaths: [resolve(cwd, "./src/scss")],
+      loadPaths: [resolve(cwd, "./src/scss")],
+      quietDeps: true,
+      api: "modern-compiler"
     }
   },
   plugins: [],
