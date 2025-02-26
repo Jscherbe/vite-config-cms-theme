@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.17
+
+- Update all dependencies to latest
+
 ## 0.0.16
 
 - Change defaults for preprocessorOptions > scss to dart sass (sass-embedded)
