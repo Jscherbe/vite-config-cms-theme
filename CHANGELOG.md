@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.19
+
+- Add origin option to cors setting in vite server to allow site (ie. Drupal site) to access resources from it (needed in vite > 5.4.11)
+
 ## 0.0.18
 
 - Fix mistake that caused errors in dependency version for @ulu/utils (got changed to v0.0.1 vs v0.0.17). Update that package to 0.0.18

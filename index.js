@@ -142,6 +142,9 @@ export function createConfig(userOptions) {
         origin,
         strictPort: true,
         hmr: { host },
+        cors: {
+          origin
+        }
       },
       css: {
         postcss: {
