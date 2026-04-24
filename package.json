@@ -33,7 +33,9 @@
   },
   "homepage": "https://github.com/Jscherbe/vite-config-cms-theme#readme",
   "devDependencies": {
-    "eslint": "^9.21.0",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.1",
+    "globals": "^17.5.0",
     "sharp": "^0.34.5",
     "svgo": "^4.0.0"
   },

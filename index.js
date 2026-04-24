@@ -1,4 +1,3 @@
-/* eslint-env node */
 import fs from "fs";
 import path from "path";
 import { hasRequiredProps } from "@ulu/utils/object.js";
@@ -176,7 +175,7 @@ function loadLocalOptions(options) {
       throw Error(errorMsg(
         "localOptionsFile", 
         `Reading JSON failed for: ${ filepath }\n${ example }\n${ reason }`
-      ));
+      ), { cause: error });
     }
   } else {
     throw Error(errorMsg(
