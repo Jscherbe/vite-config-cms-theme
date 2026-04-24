@@ -73,18 +73,20 @@ The 'createConfig' function accepts the following options
 - **input** | {String} | The entry file, defaults to "src/main.js"
 - **outDir** | {String} | Where to build the production files to, default "dist"
 - **cwd** | {String} | Path to cwd, defaults to process.cwd()
+- **localOptionsFile** | {String|Boolean} | Path to a local JSON file that can override options (like `origin`). Defaults to "vite.local.json". Set to false to disable.
 - **publicDir** | {String} | Location of Vite public dir (used for assets), default "src/public"
 - **stylesOnly** | {Boolean} | When set to true will generate only css file for input (building editor styles, builder styles, etc)
 - **globalJquery** | {String} | Add global/external jquery, so that you can import it like normal inside your ES modules, for CMS's where jQuery is accessible in the window (global)
 - **noChunks** | {Boolean} | Default true, don't allow async chunks. In drupal theme we are using AdvAgg for JS so this behavior wasn't wanted. Enable chunks by setting this to true.
 - **minify** | {Boolean} | (default true) Minify JS 
-- **minifyCss** | {Boolean} | (default true) Minify CSS
+- **cssMinify** | {Boolean} | (default true) Minify CSS
 - **plugins** | {Array} | Plugins to add to config
 - **entryFileNames** | {String} | Options to configure build option "entryFileNames" (defaults to "[name].js")
 - **chunkFileNames** | {String} | Options to configure build option "chunkFileNames" (defaults to "chunks/[name].[hash].js")
 - **assetFileNames** | {String} | Options to configure build option "assetFileNames" (defaults to "[name].[ext]")
 - **assetsInlineLimit** | {Number} | Set build.assetsInlineLimit (defaults to 0, which is disabled)
 - **withLegacy** | {Boolean} | Whether to output the legacy vite bundle
+- **legacyOptions** | {Object} | Options passed to `@vitejs/plugin-legacy` (defaults to USWDS baseline targets)
 - **withVue** | {Boolean} | Include vue plugin
 - **withImageOptimizer** | {Boolean} | Include image optimizer plugin
 - **withWatchReload** | {Boolean} | Include watch plugin to reload based on other files (php etc)

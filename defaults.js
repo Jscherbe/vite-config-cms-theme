@@ -19,6 +19,10 @@ export default {
   outDir: "dist",
   themePath: "/server/absolute/theme",
   globalJquery: true,
+  legacyOptions: {
+    targets: ["> 2%", "last 2 versions", "Firefox ESR", "not dead"],
+    modernTargets: ["chrome >= 100", "safari >= 16.4", "firefox >= 100", "edge >= 100"]
+  },
   withLegacy: true,
   withVue: true,
   withWatchReload: true,

@@ -63,7 +63,8 @@ export function createConfig(userOptions) {
     entryFileNames,
     chunkFileNames,
     assetFileNames,
-    assetsInlineLimit
+    assetsInlineLimit,
+    legacyOptions
   } = options;
 
   const debugLog = (title, msg) => {
@@ -85,7 +86,7 @@ export function createConfig(userOptions) {
       if (withVue) plugins.push(vue());
       // Render for legacy browsers, note renderModernChunks false has bug
       // so we will just have to leave those files in there
-      if (withLegacy) plugins.push(legacyPlugin());
+      if (withLegacy) plugins.push(legacyPlugin(legacyOptions));
       if (globalJquery) {
         // Make external libraries that are exposed as global variables work 
         // like es modules (Drupal included, etc). In combination with rollup

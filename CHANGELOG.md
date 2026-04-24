@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.20
+
+- Add `legacyOptions` to allow configuring `@vitejs/plugin-legacy` targets. Defaults to USWDS baseline targets (`> 2%, last 2 versions, Firefox ESR, not dead` and modern targets `chrome >= 100, safari >= 16.4, firefox >= 100, edge >= 100` to align with ES2022 support).
+
 ## 0.0.19
 
 - Add origin option to cors setting in vite server to allow site (ie. Drupal site) to access resources from it (needed in vite > 5.4.11)
